@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const path = require("path");
 
@@ -15,9 +13,27 @@ const complements = [
   "You've learned a lot of things, and that's pretty hard to do"
 ];
 
+const insults = [
+"aberrant",
+"amateur",
+"animal",
+"anorak",
+"ape",
+"ape covered in human flesh",
+"apefucker",
+"idiot",
+"arse",
+"arsebreath",
+];
+
 function getRandomComplement() {
   const randomIndex = Math.floor(Math.random() * complements.length);
   return complements[randomIndex];
+}
+
+function getRandomInsult() {
+  const randomIndex = Math.floor(Math.random() * insults.length);
+  return insults[randomIndex];
 }
 
 const app = express();
@@ -30,6 +46,14 @@ app.get("/complement", function(req, res) {
   res
     .json({
       complement: getRandomComplement()
+    })
+    .end();
+});
+
+app.get("/insults", function(req, res) {
+  res
+    .json({
+      insults: getRandomInsult()
     })
     .end();
 });

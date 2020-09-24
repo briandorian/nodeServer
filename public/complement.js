@@ -6,7 +6,7 @@ document
         return res.json();
       })
       .then(function(data) {
-        document.querySelector(".complement").innerText = data.complement;
+        document.querySelector(".complement").textContent = data.complement;
       })
       .catch(function(err) {
         console.error(err);

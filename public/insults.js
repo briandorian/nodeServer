@@ -6,7 +6,7 @@ document
         return res.json();
       })
       .then(function(data) {
-        document.querySelector(".insult").innerText = data.insults;
+        document.querySelector(".insult").textContent = data.insults;
       })
       .catch(function(err) {
         console.error(err);
